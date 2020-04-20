@@ -6,12 +6,12 @@ from email.header import Header
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 mail_host='smtp.qiye.163.com'
-mail_user='notification@empowerwin.com'
-mail_pass='!QAZ2wsx'
+mail_user='xx@xx'
+mail_pass='!xxx'
 
 def send_mail():
     sender = mail_user
-    receivers = ['gaoqihua@empowerwin.com','gao@skyjilygao.cn']
+    receivers = ['xx','xxx']
 
     message = MIMEMultipart()
     message.attach(MIMEText('test...', 'plain', 'utf-8'))
@@ -25,10 +25,9 @@ def send_mail():
 
     # 附件
     # MIMEApplication
-    str = 'E:\\home1\\adorado\\ali-express\\new-report-daily-total-adset\\20200312' \
-          '\\report-new-daily-total-20200312-ct20200413_145834.xlsx'
+    str = 'test/a.txt'
     part = MIMEApplication(open(str,'rb').read())
-    part.add_header('Content-Disposition','attachment',filename='a.xlsx')
+    part.add_header('Content-Disposition','attachment',filename='a.txt')
     message.attach(part)
     # smtplib.SMTP_SSL()
     smtpObj = smtplib.SMTP_SSL()
